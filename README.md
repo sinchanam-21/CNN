@@ -1,3 +1,13 @@
+---
+title: CIFAR 10
+emoji: 🔥
+colorFrom: yellow
+colorTo: purple
+sdk: docker
+pinned: false
+license: mit
+---
+
 # CIFAR-10 CNN Classifier
 
 This project implements an end-to-end Convolutional Neural Network (CNN) for the CIFAR-10 dataset using PyTorch.
@@ -76,3 +86,5 @@ This project is ready for deployment to Hugging Face Spaces (CPU Basic).
 2. Select **Gradio** as the SDK.
 3. Upload the files (including `app.py`, `cifar_net.pth`, `requirements.txt`, and the `src/` folder).
 4. The Space will build and launch automatically using `app.py`.
+
+Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
