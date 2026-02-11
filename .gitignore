@@ -156,3 +156,4 @@ data/
 *.jpg
 create_dummy_image.py
 implementation_plan.md
+!cifar_net.pth

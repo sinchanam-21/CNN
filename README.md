@@ -49,3 +49,30 @@ If you encounter errors:
   `pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu`
 - **shm.dll Error**: This is a multiprocessing issue. The code handles this by setting `num_workers=0` in `data_loader.py`.
 - **SSL Error during download**: The code includes a patch to bypass SSL verification if certificates are missing.
+
+## Deployment
+
+### Docker
+
+To run the application using Docker:
+
+1. **Build the image**:
+   ```bash
+   docker build -t cnn-classifier .
+   ```
+
+2. **Run the container**:
+   ```bash
+   docker run -p 7860:7860 cnn-classifier
+   ```
+
+3. Open `http://localhost:7860` in your browser.
+
+### Hugging Face Spaces
+
+This project is ready for deployment to Hugging Face Spaces (CPU Basic).
+
+1. Create a new Space on [huggingface.co](https://huggingface.co/new-space).
+2. Select **Gradio** as the SDK.
+3. Upload the files (including `app.py`, `cifar_net.pth`, `requirements.txt`, and the `src/` folder).
+4. The Space will build and launch automatically using `app.py`.

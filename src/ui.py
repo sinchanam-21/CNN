@@ -5,7 +5,7 @@ from PIL import Image
 from src.model import SimpleCNN
 import os
 
-def launch_ui(model_path='cifar_net.pth', device='cpu'):
+def create_ui(model_path='cifar_net.pth', device='cpu'):
     classes = ('plane', 'car', 'bird', 'cat',
                'deer', 'dog', 'frog', 'horse', 'ship', 'truck')
                
@@ -44,5 +44,8 @@ def launch_ui(model_path='cifar_net.pth', device='cpu'):
         description="Upload an image to see what the CNN predicts! (Classes: plane, car, bird, cat, deer, dog, frog, horse, ship, truck)",
         theme="soft"
     )
-    
-    demo.launch(share=False)
+    return demo
+
+def launch_ui(model_path='cifar_net.pth', device='cpu'):
+    demo = create_ui(model_path, device)
+    demo.launch(share=True)
